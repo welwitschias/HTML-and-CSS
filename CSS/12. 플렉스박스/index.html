@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>플렉스박스</title>
+    <style>
+        html,
+        body {
+            background-color: #ffeead;
+            margin: 10px;
+        }
+
+        .container {
+            border: 5px solid #ffcc5c;
+            /* flex 사용시 부모 태그에서 자식 아이템들을 정렬한다. */
+            /* 기본 : 가로로, 왼쪽에서 정렬 */
+            display: flex;
+            /* 가로 정렬 기능 : flex-start, flex-end, center, space-around(요소들 주위에 동일한 간격), space-between(요소들 사이에 동일한 간격) 등 */
+            justify-content: flex-end;
+            /* 줄바꿈 */
+            flex-wrap: wrap;
+        }
+
+        .container div {
+            padding: 10px;
+            text-align: center;
+            font-size: 2em;
+            color: #ffeead;
+            min-width: 300px;
+        }
+
+        .home {
+            background-color: #96ceb4;
+            margin-right: auto;
+            /* flex 비율 */
+            flex: 1;
+            /* 표시순서 */
+            order: 1;
+        }
+
+        .search {
+            background-color: #ff6f69;
+            flex: 2;
+            order: 3;
+        }
+
+        .logout {
+            background-color: skyblue;
+            /* margin-left: auto; */
+            flex: 1;
+            order: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="home">Home</div>
+        <div class="search">Search</div>
+        <div class="logout">Logout</div>
+    </div>
+</body>
+
+</html>

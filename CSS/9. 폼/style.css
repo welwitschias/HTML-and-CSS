@@ -1,0 +1,187 @@
+html {
+    background-color: #869960;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 87%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+header {
+    padding-top: 20px;
+    color: #617140;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 165%;
+}
+
+header p {
+    margin: 0;
+}
+
+/* Site Navigation */
+.site-nav {
+    margin-top: 20px;
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav li {
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+}
+
+.site-nav a {
+    display: block;
+    color: #617140;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 3px solid #e5e9dc;
+    border-bottom: none;
+}
+
+.site-nav a:hover {
+    background-color: #e5e9dc;
+}
+
+/* End Site Navigation */
+
+.content-area {
+    border-top: 3px solid #e5e9dc;
+    border-bottom: 3px solid #e5e9dc;
+}
+
+.main-area {
+    width: 66%;
+    float: left;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+/* form-style 시작*/
+form {
+    background-color: rgb(204, 226, 204);
+    padding: 30px 40px;
+}
+
+/* 화면에 내용 안보이게 함 */
+.hidden-label {
+    /* position: absolute;
+    overflow: hidden;
+    visibility: hidden; */
+    display: none;
+}
+
+input,
+select {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100%;
+}
+
+select {
+    /* 테두리 둥글게 만들기 */
+    border-radius: 10px;
+}
+
+/* input 태그는 따로 class 줄 필요 없이 [type=""]로 선택가능 */
+input[type="email"],
+input[type="password"],
+select {
+    /* 입력창을 한줄에 하나씩 나오게(속성을 블록으로 변경) */
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 40px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    /* 선택했을 때 가장자리 표시를 제거 */
+    outline: none;
+}
+
+/* 입력창을 선택했을 때 */
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border: 1px solid rgb(0, 255, 115);
+    box-shadow: inset 1px 1px 7px rgb(0, 255, 115);
+}
+
+input[type="submit"] {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    background-color: rgb(255, 253, 221);
+    border-radius: 5px;
+    outline: none;
+    color: darkorange;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(255, 250, 182);
+}
+
+.checkbox-text {
+    font-size: 90%;
+}
+
+.sidebar {
+    width: 34%;
+    float: left;
+    background-color: #e5e9dc;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    font-size: 85%;
+}
+
+footer {
+    text-align: center;
+    font-size: 85%;
+    color: #999;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.fix {
+    clear: both;
+}
+
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    zoom: 1;
+}

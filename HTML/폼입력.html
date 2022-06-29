@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>form 입력 태그</title>
+</head>
+
+<body>
+    <!-- 폼태그로 감싼다. -->
+    <form action="#보낼주소">
+        <!-- 일반 텍스트 창 / required : 입력이 되어야 전송가능하게 해줌 -->
+        <div><label for="name1">이름1</label>
+            <input type="text" id="name1" placeholder="이름...">
+        </div>
+        <div><label for="name2">이름2</label>
+            <input type="text" id="name2" value="길동">
+        </div>
+        <div><label for="email">이메일</label>
+            <input type="email" id="email" placeholder="이메일..." required>
+        </div>
+
+        <!-- 긴문장은 textarea -->
+        <div><label for="message">메세지</label>
+            <textarea id="message" cols="35" rows="5" required></textarea>
+        </div>
+
+        <!-- 셀렉트+옵션 / 맨 위에 적힌 옵션이 맨 처음 보임 / selected : 맨 처음 보이게 -->
+        <div><label for="gender">성별</label>
+            <select name="gender" id="gender">
+                <option value="male">남성</option>
+                <option value="female" selected>여성</option>
+            </select>
+        </div>
+
+        <!-- 숫자만 입력 -->
+        <div><label for="age">나이</label>
+            <input type="number" id="age">
+        </div>
+
+        <!-- 날짜 선택 -->
+        <div><label for="birthday">생년월일</label>
+            <input type="date" id="birthday">
+        </div>
+
+        <!-- 라디오 선택(하나만 선택가능, name이 같아야함) -->
+        <div><label for="membership">멤버쉽</label>
+            <input type="radio" name="membership">심플
+            <input type="radio" name="membership">스탠다드
+            <input type="radio" name="membership">슈퍼
+        </div>
+
+        <!-- 체크박스(여러개 선택가능, name이 다름) -->
+        <div><label for="">선물</label>
+            <input type="checkbox" name="gift1">오토바이
+            <input type="checkbox" name="gift2">자동차
+            <input type="checkbox" name="gift3">보트
+        </div>
+
+        <!-- 입력 버튼(서버로 전송) -->
+        <button type="submit">보내기</button>
+        <input type="submit" value="전송">
+        <button type="reset">초기화</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        html {
+            background-color: #B8F1B0;
+        }
+
+        body {
+            font-family: Tahoma, sans-serif;
+            font-size: 90%;
+        }
+
+        .container {
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            /* 색 표현법 - 1. 색이름(red, blue, ...) 2. RGB(255,255,255) 3. 16진수 #XXXXXX */
+            /* 흰색 : white, RGB(255,255,255), #FFFFFF */
+            background-color: white;
+            padding-left: 40px;
+            padding-right: 40px;
+            /* 기본이 content이기 때문에 box크기를 정확하게 주기 위해서 */
+            box-sizing: border-box;
+        }
+
+        header {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: darkgreen;
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 200%;
+        }
+
+        header p {
+            margin: 0;
+        }
+
+        .content-area {
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+        }
+
+        .main-area {
+            width: 64.5%;
+            float: left;
+            background-color: cornsilk;
+            padding-left: 2%;
+            padding-right: 2%;
+            border: 1px dotted black;
+            margin-left: 0.5%;
+            box-sizing: border-box;
+        }
+
+        .sidebar {
+            width: 34.5%;
+            float: right;
+            background-color: khaki;
+            font-size: 85%;
+            padding: 10px 10px;
+            border: 1px dotted red;
+            margin-right: 0.5%;
+            box-sizing: border-box;
+        }
+
+        footer {
+            /* 글자 가운데 정렬 */
+            text-align: center;
+            font-size: 80%;
+            color: #999;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .fix {
+            clear: both;
+        }
+
+        /* 플로트 에러방지(clear 사용안하는 방법), 플로트 사용하는 곳에 class 그룹 추가 */
+        .group:before,
+        .group:after {
+            content: "";
+            display: table;
+        }
+
+        .group:after {
+            clear: both;
+        }
+
+        .group {
+            zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Website Title</h1>
+            <p>Website slogan included here.</p>
+        </header>
+
+        <div class="content-area group">
+            <main class="main-area">
+                <p>This is main. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi deleniti quod
+                    numquam?
+                    Quam,
+                    facilis impedit? Quam possimus numquam commodi culpa, corporis blanditiis eaque harum quaerat
+                    ratione
+                    animi
+                    magnam! Quas, a.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus quo quam expedita vero adipisci
+                    similique
+                    deleniti fugit maiores odio quas repellat neque, veritatis molestiae accusamus, porro accusantium
+                    temporibus
+                    tempora sapiente!</p>
+            </main>
+
+            <aside class="sidebar">
+                <p>This is sidebar. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores est modi amet
+                    nesciunt
+                    repellendus quis maiores expedita distinctio deserunt fugiat, sit laboriosam aspernatur labore rem
+                    dolore
+                    hic
+                    nulla laborum qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores est modi amet
+                    nesciunt
+                    repellendus quis maiores expedita distinctio deserunt fugiat, sit laboriosam aspernatur labore rem
+                    dolore
+                    hic
+                    nulla laborum qui.
+                </p>
+            </aside>
+            <div class="fix"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2021 - This is the footer.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
