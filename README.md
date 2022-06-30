@@ -1,2 +1,2 @@
-# HTML and CSS
+# HTML_CSS
 HTML과 CSS 수업내용
