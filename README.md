@@ -1,2 +1,2 @@
-# Learning
-Learing and Practice Files
+# Study Coding
+Learing and Practice Files in Class
