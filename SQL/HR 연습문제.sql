@@ -131,10 +131,30 @@ ORDER BY e.employee_id;
 --Q12 부서별로 가장 적은 급여를 받고 있는 직원의 이름, 부서이름, 급여를 출력하시오. 
 --    이름은 last_name만 출력하며, 부서이름으로 오름차순 정렬하고, 
 --    부서가 같은 경우 이름을 기준으로 오름차순 정렬하여 출력합니다.
-SELECT d.department_name, e.employee_id, e.last_name, e.salary
+SELECT e.last_name, A.*
+FROM employees e,
+    (SELECT d.department_name, MIN(e.salary) MIN_SAL
+     FROM employees e
+     JOIN departments d ON d.department_id = e.department_id
+     GROUP BY d.department_name) A
+WHERE e.salary = A.MIN_SAL
+ORDER BY A.department_name, e.last_name;
+
+SELECT A.*
+FROM (SELECT e.last_name, d.department_name, MIN(e.salary) MIN_SAL
+      FROM employees e
+      JOIN departments d ON d.department_id = e.department_id
+      GROUP BY d.department_name, e.last_name) A
+ORDER BY department_name, last_name; -- 최저급여만 남겨야 함
+
+SELECT e.last_name, d.department_name, e.salary
 FROM employees e
 JOIN departments d ON d.department_id = e.department_id
-ORDER BY d.department_name, e.last_name; ???????????????
+WHERE ????? -- 부서별 최저급여만 서브쿼리 만들어 놨음
+(SELECT d.department_name, MIN(e.salary)
+ FROM employees e JOIN departments d ON d.department_id = e.department_id
+ GROUP BY department_name)
+ORDER BY d.department_name, e.last_name;
 
 --Q13 EMPLOYEES 테이블에서 급여를 많이 받는 순서대로 조회했을 때 6번째부터 10번째까지 직원의
 --    last_name, first_name, salary를 조회하는 SQL문장을 작성하시오.
@@ -154,8 +174,20 @@ AND e.salary < (SELECT ROUND(AVG(salary)) FROM employees WHERE department_id = 1
 --Q15 부서별 입사월별 직원수를 출력하시오. 
 --    단, 직원수가 5명 이상인 부서만 출력되어야 하며 출력결과는 부서이름 순으로 한다.
 --    (결과에서 5명 이상 또는 부서원 5명 이상)
-
+SELECT d.department_name, TO_CHAR(e.hire_date, 'MM'), COUNT(*)
+FROM employees e
+JOIN departments d ON d.department_id = e.department_id
+GROUP BY d.department_name, TO_CHAR(e.hire_date, 'MM')
+HAVING COUNT(*) >= 5
+ORDER BY d.department_name;
 
 --Q16 커미션(commission_pct)을 가장 많이 받은 상위 4명의 부서명(department_name), 직원명 (first_name),
 --    급여(salary), 커미션(commission_pct) 정보를 조회하시오. 
---    출력결과는 커미션을 많이 받는 순서로 출력하되 동일한 커미션에 대해서는 급여가 높은 직원이 먼저 출력 되게 한다.
+--    출력결과는 커미션을 많이 받는 순서로 출력하되 동일한 커미션에 대해서는 급여가 높은 직원이 먼저 출력되게 한다.
+SELECT A.*
+FROM (SELECT d.department_name, e.first_name, e.salary, e.commission_pct
+      FROM employees e
+      JOIN departments d ON d.department_id = e.department_id
+      WHERE e.commission_pct IS NOT NULL
+      ORDER BY e.commission_pct DESC, e.salary DESC) A
+WHERE ROWNUM <= 4;
