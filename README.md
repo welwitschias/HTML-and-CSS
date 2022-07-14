@@ -1,2 +1,2 @@
-## Study Programming Languages
+## Studying...
 Learing and Practice Files in Class
