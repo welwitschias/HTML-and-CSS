@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const boxes = document.querySelectorAll('.box');
 // 윈도우창에서 scroll하면 checkBoxes 함수 실행
