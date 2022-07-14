@@ -1,0 +1,167 @@
+html {
+    background-color: #869960;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 87%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+header {
+    padding-top: 20px;
+    color: #617140;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 165%;
+}
+
+header p {
+    margin: 0;
+}
+
+/* Site Navigation */
+.site-nav {
+    margin-top: 20px;
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav li {
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+}
+
+.site-nav a {
+    display: block;
+    color: #617140;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 3px solid #e5e9dc;
+    border-bottom: none;
+}
+
+.site-nav a:hover {
+    background-color: #e5e9dc;
+}
+
+/* End Site Navigation */
+
+.content-area {
+    border-top: 3px solid #e5e9dc;
+    border-bottom: 3px solid #e5e9dc;
+}
+
+.main-area {
+    width: 66%;
+    float: left;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+/* 테이블 스타일 */
+table {
+    /* 보더 간격 0 */
+    border-spacing: 0;
+    /* 보더 합치기 : 2줄을 1줄로 합쳐준다 */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.col-item-name {
+    width: 60%;
+}
+
+.col-quantity,
+.col-price {
+    width: 20%;
+}
+
+/* 제목 행에 적용 */
+table th {
+    /* 글자 정렬위치 */
+    text-align: left;
+    background-color: #a5ad95;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0);
+}
+
+/* 모든 셀에 적용 */
+table th,
+table td {
+    border: 1px solid #a5ad95;
+    padding: 10px;
+    /* 여러 줄일때 내용 위치지정 */
+    vertical-align: top;
+}
+
+/* 본문 짝수 행(제목 제외)에만 배경색 넣기 */
+/* 짝수 : even, 홀수 : odd, 숫자지정하면 해당하는 행만 적용, 첫번째행은 first, 마지막행은 last */
+table tbody tr:nth-child(even) {
+    background-color: #d0d8c6;
+}
+
+/* table tbody tr:nth-child(숫자) {
+    background-color: blue;
+} */
+
+/* 본문 행에 마우스 올렸을 때 색 바꾸기 */
+table tbody tr:hover {
+    background-color: rgb(230, 250, 253);
+}
+
+.sidebar {
+    width: 34%;
+    float: left;
+    background-color: #e5e9dc;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    font-size: 85%;
+}
+
+footer {
+    text-align: center;
+    font-size: 85%;
+    color: #999;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.fix {
+    clear: both;
+}
+
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    zoom: 1;
+}

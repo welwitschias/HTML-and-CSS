@@ -1,0 +1,21 @@
+body {
+    font-family: cursive;
+}
+
+/* .은 class에 해당 */
+.male {
+    color: aqua;
+}
+
+ul {
+    list-style: none;
+}
+
+/* #은 id에 해당 */
+#ceo {
+    background-color: cornflowerblue;
+}
+
+h2 {
+    color: blueviolet;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>박스 모델 첫 실습!</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            margin: 20px;
+            border: 5px solid black;
+        }
+
+        span {
+            background-color: black;
+            color: white;
+            margin: 20px;
+            padding: 10px;
+            border: 5px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>블럭 vs 인라인</h1>
+
+    <h2>블럭</h2>
+    <div></div>
+    <div></div>
+    <div></div>
+    <ul>
+        <li>한 줄에 하나씩 쌓임</li>
+        <li>가로와 세로 길이를 가짐</li>
+        <li>화면 배치를 위해 사용</li>
+    </ul>
+
+    <h2>인라인</h2>
+    <span>A</span>
+    <span>BB</span>
+    <span>CCC</span>
+
+    <ul>
+        <li>한 줄에 여러 요소가 나옴</li>
+        <li>가로 세로 길이 직접 X. 내용물의 크기 만큼을 가짐</li>
+        <li>텍스트를 꾸밀 때, 사용</li>
+    </ul>
+</body>
+
+</html>
